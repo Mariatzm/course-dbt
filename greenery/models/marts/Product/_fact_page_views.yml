@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: fact_page_views
+    description: "Page Views"
+    columns:
+          - name: VIEW_ID
+            description: "The unique view id"
+            tests:
+              - unique
+              - not_null
+          - name: PRODUCT_NAME
+            description: "The product name"
+            tests: 
+              - not_null

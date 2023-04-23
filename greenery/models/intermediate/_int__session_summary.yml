@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: int__session_summary
+    description: "User session summary"
+    columns:
+        - name: SESSION_ID
+          description: "The unique session id"
+          tests:
+            - unique
+            - not_null

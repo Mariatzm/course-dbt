@@ -7,19 +7,60 @@ models:
 
   - name: stg_postgres__events
     description: "Events"
+    columns:
+        - name: event_id
+          description: "The unique event id"
+          tests:
+            - unique
+        - name: session_id
+          description: "The session id"
+          tests:
+            - not_null
+        - name: user_id
+          description: "The user id"
+          tests:
+            - not_null
+        - name: page_url
+          description: "The url id"
+          tests:
+            - not_null
 
   - name: stg_postgres__order_items
     description: "Order Items"
+    columns:
+      - name: quantity
+        description: "Quantity of product_id's ordered"
+        tests: 
+          - is_greater_than_zero
 
   - name: stg_postgres__orders
     description: "Orders"
+    columns:
+      - name: order_id
+        description: "The unique order id"
+        tests:
+          - unique
+          - not_null
+
 
   - name: stg_postgres__products
     description: "Products"
+    columns:
+        - name: product_id
+          description: "The unique product id"
+          tests:
+            - unique
+            - not_null
 
   - name: stg_postgres__promos
     description: "Promos"
 
   - name: stg_postgres__users
     description: "Users"
+    columns:
+          - name: user_id
+            description: "The unique user id"
+            tests:
+              - unique
+              - not_null
    
