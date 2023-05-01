@@ -1,0 +1,15 @@
+version: 2
+
+macros:
+ 
+  - name: sum_per_event_type
+    description: calculates sum per each event type
+    docs:
+      show: true
+    arguments:
+      - name: event_type
+  - name: grant
+    description: apply grants to the role
+    docs:
+      show: true
+   

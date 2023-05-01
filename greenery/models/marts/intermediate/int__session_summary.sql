@@ -4,6 +4,11 @@
   )
 }}
 
+{%- set event_types = dbt_utils.get_column_values(
+    table=ref('stg_postgres__events'),
+    column='event_type'
+) -%}
+
 WITH stg_events AS (
   SELECT
     *
@@ -13,10 +18,9 @@ WITH stg_events AS (
 SELECT
   SESSION_ID
   , USER_ID
-  , SUM(CASE WHEN EVENT_TYPE = 'page_view' THEN 1 ELSE 0 END) AS PAGE_VIEWS
-  , SUM(CASE WHEN EVENT_TYPE = 'add_to_cart' THEN 1 ELSE 0 END) AS ADD_TO_CARTS
-  , SUM(CASE WHEN EVENT_TYPE = 'checkout' THEN 1 ELSE 0 END) AS CHECKOUTS
-  , SUM(CASE WHEN EVENT_TYPE = 'package_shipped' THEN 1 ELSE 0 END) AS PACKAGE_SHIPPEDS
+  {%- for event_type in event_types %}
+  , {{sum_per_event_type(event_type)}} as {{event_type}}s
+  {%- endfor %}
   , MAX(CASE WHEN EVENT_TYPE = 'checkout' THEN CREATED_AT ELSE NULL END) AS MAX_CHECKOUT_TIME
   , MAX(CASE WHEN EVENT_TYPE = 'package_shipped' THEN CREATED_AT ELSE NULL END) AS MAX_SHIPPED_TIME
   , MIN(CREATED_AT) AS FIRST_SESSION_EVENT_TIME

@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: int__events_checkouts
+    description: "Events - Checkouts"
+    columns:
+          - name: EVENT_ID
+            description: "The unique event id"
+            tests:
+              - unique
+              - not_null

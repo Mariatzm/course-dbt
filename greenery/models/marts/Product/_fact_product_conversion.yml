@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: fact_product_conversion
+    description: "Product Conversion"
+    columns:
+          - name: total_conversion
+            description: " # of unique sessions with a purchase event / total number of unique sessions "
+            tests:
+              - not_null
+     

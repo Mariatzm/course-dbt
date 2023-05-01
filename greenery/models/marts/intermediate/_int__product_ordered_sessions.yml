@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: int__product_ordered_sessions
+    description: "Distinct sessions where product was ordered"
+    columns:
+          - name: PRODUCT_ID
+            description: "The unique product id"
+            tests:
+              - unique
+              - not_null

@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: int__events_page_views
+    description: "Events - Page views"
+    columns:
+          - name: EVENT_ID
+            description: "The unique event id"
+            tests:
+              - unique
+              - not_null
