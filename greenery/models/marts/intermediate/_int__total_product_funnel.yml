@@ -1,0 +1,6 @@
+version: 2
+
+models:
+  - name: int__total_product_funnel
+    description: "Product funnel - LTV"
+

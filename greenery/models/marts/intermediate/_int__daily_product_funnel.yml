@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: int__daily_product_funnel
+    description: "Daily product funnel"
+    columns:
+          - name: DATE_OF_SESSION
+            tests: 
+              - not_null
+              - unique
