@@ -1,23 +1,27 @@
 
-### Week 4 questions
+# Week 4 questions
+
+DAG : 
+
+![dbt-dag (2)](https://user-images.githubusercontent.com/52375317/236708899-edffe218-302e-40e6-a459-ce64233afc39.png)
 
 ## Part 1. dbt Snapshots
 
-# Which products had their inventory change from week 3 to week 4?
+### Which products had their inventory change from week 3 to week 4?
 
 Bamboo , Philodendron, String of pearls, Pothos, ZZ Plant, Monstera
 
-# Now that we have 3 weeks of snapshot data, can you use the inventory changes to determine which products had the most fluctuations in inventory? 
+### Now that we have 3 weeks of snapshot data, can you use the inventory changes to determine which products had the most fluctuations in inventory? 
 
 Most fluctuations: Philodendron, Pothos, Monstera, String of pearls
 
-# Did we have any items go out of stock in the last 3 weeks?
+### Did we have any items go out of stock in the last 3 weeks?
 
 Pothos and String of pearls
 
 ## Part 2. Modeling challenge
 
-# How are our users moving through the product funnel?
+### How are our users moving through the product funnel?
 
 I prepared the fact_total_product_funnel and fact_daily_product_funnel tables to check how users are moving through the product funnel 
 
@@ -35,9 +39,9 @@ fact_daily_product_funnel:
 |2021-02-10|175|175|175|175|100|100|100|100|100|
 |2021-02-09|2|2|2|2|100|100|100|100|100|
 
-### Part 3: Reflection questions -- please answer 3A or 3B, or both!
+# Part 3: Reflection questions -- please answer 3A or 3B, or both!
 
-# 3A if your organization is thinking about using dbt, how would you pitch the value of dbt/analytics engineering to a decision maker at your organization?
+## 3A if your organization is thinking about using dbt, how would you pitch the value of dbt/analytics engineering to a decision maker at your organization?
 
 Overall, dbt can provide significant value to your organization by improving data quality, standardization, collaboration, and agility while reducing the time it takes to deliver insights to stakeholders.
 
